@@ -1,0 +1,28 @@
+/* Universal Selectors */
+/* * {
+    border: 2px solid black;
+} */
+
+/* Element Selectors */
+article {
+    background-color: aqua;
+}
+
+/* Id Selector */
+#letters {
+    color: red;
+}
+
+/* Class Selectors */
+.DT {
+    color: yellow;
+}
+
+/* attribute selector */
+input[type="password"]{
+ background-color: red;
+}
+
+a[href="https://x.com/"] {
+    background-color: brown;
+}
