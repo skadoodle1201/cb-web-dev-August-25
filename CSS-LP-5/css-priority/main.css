@@ -1,0 +1,42 @@
+* {
+    padding-left: 30px;
+    border: 10px solid pink;
+}
+
+div {
+    border: 5px solid green;
+}
+
+.imp {
+    border : 20px dashed blue !important
+}
+
+#vvip {
+    border : 3px solid brown
+}
+
+a {
+    background-color:  yellow;
+}
+/*
+* Attribute Selectors and 
+* class selector have same Priority
+* It depeneds on Order and browser performance
+* Which will be respected.
+*/
+a[href="https://www.facebook.com/"] {
+    background-color: purple;
+}
+
+.correctFacebook {
+    background-color: greenyellow;
+}
+
+#correctFacebookId {
+    background-color: green;
+}
+
+
+#vvvip {
+    background-color: aqua !important
+}

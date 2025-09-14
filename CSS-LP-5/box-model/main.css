@@ -1,0 +1,22 @@
+
+
+div {
+    border: 1px solid black;
+    /* border-color: red ;
+    border-width: 20px;
+    border-style: dotted; */
+
+    width: 200px;
+    height: 200px;
+
+    /* padding: 5px 10px 12px 15px; */
+    /* padding-left: 10px;
+    padding-right: 60px; */
+    padding: 40px;
+    /* margin : 30px 40px 10px 5px; */
+    /* margin-top: 10px;
+    margin-bottom: 20px; */
+
+    margin: 300px auto;
+}
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Order decied which css will be respected-->
+    <link rel="stylesheet" href="main.css" />
+
+    <!-- <style>
+      div {
+        border: 50px solid greenyellow;
+      }
+
+      .imp {
+        border: 20px dashed tomato;
+      }
+    </style> -->
+    <title>CSS Priority</title>
+  </head>
+  <body>
+    <div>
+      <p>
+        1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus
+        eos vero, est, distinctio ipsum laudantium ex corporis perferendis
+        atque, mollitia blanditiis dolorem fugit aliquam hic odit facere!
+        Eligendi, harum vero.
+      </p>
+    </div>
+
+    <div class="imp" id="vvip">
+      <p>
+        2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus
+        eos vero, est, distinctio ipsum laudantium ex corporis perferendis
+        atque, mollitia blanditiis dolorem fugit aliquam hic odit facere!
+        Eligendi, harum vero.
+      </p>
+    </div>
+
+    <!--Inline CSS is more respected that internal or external-->
+    <div class="imp" id="vvvip" style="background-color: teal">
+      <p>
+        2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus
+        eos vero, est, distinctio ipsum laudantium ex corporis perferendis
+        atque, mollitia blanditiis dolorem fugit aliquam hic odit facere!
+        Eligendi, harum vero.
+      </p>
+    </div>
+
+    <div class="imp">
+      <p>
+        3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus
+        eos vero, est, distinctio ipsum laudantium ex corporis perferendis
+        atque, mollitia blanditiis dolorem fugit aliquam hic odit facere!
+        Eligendi, harum vero.
+      </p>
+    </div>
+
+    <div>
+      <p>
+        4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus
+        eos vero, est, distinctio ipsum laudantium ex corporis perferendis
+        atque, mollitia blanditiis dolorem fugit aliquam hic odit facere!
+        Eligendi, harum vero.
+      </p>
+    </div>
+
+    <div>
+      <a href="https://x.com/"> Follow X </a>
+    </div>
+    <div>
+      <a href="https://www.facebook.com/"> Follow Facebook </a>
+    </div>
+
+    <div>
+      <a
+        class="correctFacebook"
+        href="https://www.facebook.com/"
+        id="correctFacebookId"
+      >
+        Follow Facebook
+      </a>
+    </div>
+  </body>
+</html>

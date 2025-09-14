@@ -1,0 +1,32 @@
+
+button:hover{
+    background-color: red;
+}
+li:first-child {
+    background-color: orange;
+}
+
+li:last-child {
+    background-color: aqua;
+}
+
+/* from the top counts from 1 to n */
+li:nth-child(4) {
+    background-color: green;
+}
+
+/* from the bottom counts from 1 to n */
+li:nth-last-child(2) {
+    background-color: red;
+}
+
+
+li:nth-child(even) {
+    background-color: green;
+}
+
+/* 
+We can add a formal of an+b where n is the list size
+li:nth-child(2n+1) {
+    background-color: green;
+} */

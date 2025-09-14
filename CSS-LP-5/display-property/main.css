@@ -1,0 +1,18 @@
+div {
+    border: 1px solid black;
+
+    width: 100px;
+    height: 100px;
+
+    display: block;
+}
+
+span {
+    border: 2px dashed teal;
+    width: 200px;
+    height: 200px;
+
+    display: none;
+    margin: 100px;
+}
+
