@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    :root {
+      font-size: 5px;
+    }
+    body {
+      width: 100vw;
+      height: 100vh;
+      padding: 25px;
+    }
+
+    div {
+      background-color: rgba(200, 110, 222, 0.5);
+      /* 1. Direct Color Name  
+          2. Hexdeciamal | Hexcode  - #RRGGBB 
+          3. RGB - rgb(200,110,222)
+          4. RGBA - rgba(200,110,222,0.5)
+      */
+
+      border: 2px solid black;
+      margin: 5px;
+    }
+
+    #div2 {
+      font-size: 10px;
+    }
+
+    /* nem where n is the n 
+    times of parent property */
+    #div2 div {
+      font-size: 2em;
+    }
+
+    /* nrem where n is the n 
+    times of root property */
+    #div3 div {
+      font-size: 2rem;
+    }
+  </style>
+  <body>
+    <div id="div1">ABC</div>
+    <div id="div2">
+      XYZ
+      <div>
+        123
+        <div>456</div>
+      </div>
+    </div>
+
+    <div id="div3">
+      XYZ
+      <div>
+        123
+        <div>456</div>
+      </div>
+    </div>
+  </body>
+</html>

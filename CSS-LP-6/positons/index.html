@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        border: 2px solid #000000;
+        background-color: aqua;
+        width: 200px;
+        height: 200px;
+        margin: 5px;
+      }
+
+      /* .rel { */
+      /* Works from its original postion 
+        or on it parents */
+      /* position: relative;
+        top: 20px;
+        left: 40px; */
+      /* } */
+
+      /* #abs { */
+      /* Works from nearest positioned Parent
+        or body\html */
+      /* position: absolute;
+        top: 10px;
+        left: 50px;
+      } */
+
+      #fix {
+        position: fixed;
+        top: 0px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="background-color: red" id="fix"></div>
+    <div style="background-color: pink" class="rel" style="margin-top: 500px">
+      Postioned relative
+    </div>
+    <section
+      class="rel"
+      style="background-color: bisque; width: 400px; height: 400px"
+    >
+      <div style="background-color: yellow" id="abs">Absolute Postion</div>
+    </section>
+    <div style="background-color: green"></div>
+    <div></div>
+  </body>
+</html>

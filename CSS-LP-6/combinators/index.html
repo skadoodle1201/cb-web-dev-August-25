@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    p {
+      color: red;
+    }
+
+    /* this is descendant combinator effects 
+    all the children */
+    section p {
+      color: green;
+    }
+
+    /* this is child combinator and only 
+    effect direct child */
+    section > p {
+      color: orange;
+    }
+    /* This is general sibling combinator
+    effects all the siblings of 
+    article after it */
+    article ~ section {
+      background-color: purple;
+    }
+
+    /* This is adjacent or next combinator 
+    used to slect immeditate sibling 
+    of article*/
+    article + section {
+      background-color: green;
+    }
+  </style>
+  <body>
+    <div>
+      <section>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+          obcaecati adipisci delectus ratione a, cumque, incidunt culpa ipsam
+          laborum quo laudantium unde reiciendis eveniet ex aliquid distinctio
+          recusandae totam repellendus?
+        </p>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+          obcaecati adipisci delectus ratione a, cumque, incidunt culpa ipsam
+          laborum quo laudantium unde reiciendis eveniet ex aliquid distinctio
+          recusandae totam repellendus?
+        </p>
+        <div>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
+            provident in vero nemo maxime, doloribus quo et modi consequatur
+            placeat adipisci eligendi aut, fugit tenetur omnis minus sequi!
+            Adipisci, mollitia!
+          </p>
+        </div>
+      </section>
+      <article>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+          obcaecati adipisci delectus ratione a, cumque, incidunt culpa ipsam
+          laborum quo laudantium unde reiciendis eveniet ex aliquid distinctio
+          recusandae totam repellendus?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+          obcaecati adipisci delectus ratione a, cumque, incidunt culpa ipsam
+          laborum quo laudantium unde reiciendis eveniet ex aliquid distinctio
+          recusandae totam repellendus?
+        </p>
+      </article>
+
+      <section>
+        <p>After Article Sec</p>
+
+        <p>After Article Sec</p>
+        <div>
+          <p>Div Inside After Article Sec</p>
+        </div>
+      </section>
+
+      <section>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+          obcaecati adipisci delectus ratione a, cumque, incidunt culpa ipsam
+          laborum quo laudantium unde reiciendis eveniet ex aliquid distinctio
+          recusandae totam repellendus?
+        </p>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+          obcaecati adipisci delectus ratione a, cumque, incidunt culpa ipsam
+          laborum quo laudantium unde reiciendis eveniet ex aliquid distinctio
+          recusandae totam repellendus?
+        </p>
+        <div>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
+            provident in vero nemo maxime, doloribus quo et modi consequatur
+            placeat adipisci eligendi aut, fugit tenetur omnis minus sequi!
+            Adipisci, mollitia!
+          </p>
+        </div>
+      </section>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo obcaecati
+        adipisci delectus ratione a, cumque, incidunt culpa ipsam laborum quo
+        laudantium unde reiciendis eveniet ex aliquid distinctio recusandae
+        totam repellendus?
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo obcaecati
+        adipisci delectus ratione a, cumque, incidunt culpa ipsam laborum quo
+        laudantium unde reiciendis eveniet ex aliquid distinctio recusandae
+        totam repellendus?
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo obcaecati
+        adipisci delectus ratione a, cumque, incidunt culpa ipsam laborum quo
+        laudantium unde reiciendis eveniet ex aliquid distinctio recusandae
+        totam repellendus?
+      </p>
+
+      <section>
+        Last. Section
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+          obcaecati adipisci delectus ratione a, cumque, incidunt culpa ipsam
+          laborum quo laudantium unde reiciendis eveniet ex aliquid distinctio
+          recusandae totam repellendus?
+        </p>
+
+        <p>
+          Section Last Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Illo obcaecati adipisci delectus ratione a, cumque, incidunt culpa
+          ipsam laborum quo laudantium unde reiciendis eveniet ex aliquid
+          distinctio recusandae totam repellendus?
+        </p>
+        <div>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
+            provident in vero nemo maxime, doloribus quo et modi consequatur
+            placeat adipisci eligendi aut, fugit tenetur omnis minus sequi!
+            Adipisci, mollitia!
+          </p>
+        </div>
+
+        End Last Section
+      </section>
+    </div>
+  </body>
+</html>
