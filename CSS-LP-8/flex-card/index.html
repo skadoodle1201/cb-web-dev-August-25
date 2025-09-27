@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cards</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Courier New", Courier, monospace;
+    }
+    .body {
+      background-color: #ffa69e;
+    }
+    .container {
+      background-color: #ffa69e;
+      width: 100vw;
+      height: 100vh;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+    .card {
+      background-color: #faf3dd;
+      height: 400px;
+      width: 300px;
+      text-align: center;
+      border-radius: 25px;
+      box-shadow: 0px 5px 5px rgb(69, 68, 68, 0.3);
+    }
+
+    .card img {
+      width: 150px;
+      height: 150px;
+      margin-top: 20px;
+      border-radius: 4px;
+    }
+
+    .card .content {
+      margin-top: 20px;
+    }
+    /* 
+    .card:hover {
+      box-shadow: 0px 10px 10px #aed9e0;
+    }
+    .card:active {
+      box-shadow: 0px 10px 10px red;
+    } */
+
+    .navbar {
+      width: 100vw;
+      height: 70px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      background-color: #5e6472;
+      font-size: 50px;
+      color: #faf3dd;
+    }
+  </style>
+  <body>
+    <div class="navbar">Flexbox Cards</div>
+    <div class="container">
+      <div class="card">
+        <img
+          src="https://plus.unsplash.com/premium_photo-1750075345490-1d9d908215c3?q=80&w=794&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Airplan View"
+        />
+        <div class="content">
+          <h3>Card 1</h3>
+          <p>This is card 1</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://plus.unsplash.com/premium_photo-1750075345490-1d9d908215c3?q=80&w=794&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Airplan View"
+        />
+        <div class="content">
+          <h3>Card 2</h3>
+          <p>This is card 2</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://plus.unsplash.com/premium_photo-1750075345490-1d9d908215c3?q=80&w=794&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Airplan View"
+        />
+        <div class="content">
+          <h3>Card 3</h3>
+          <p>This is card 3</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
