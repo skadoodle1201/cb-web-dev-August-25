@@ -1,0 +1,55 @@
+.main-content {
+  width: 70%;
+  min-height: calc(100vh - 58px);
+  display: flex;
+  margin: auto;
+}
+.blog-section {
+  /* background-color: orange; */
+  border-right: 1px solid #f2f2f2;
+  width: 68%;
+}
+
+.staff-pick-section {
+  /* background-color: bisque; */
+  width: 32%;
+}
+
+.for-you-navbar {
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  background-color: white;
+  height: 70px;
+  display: flex;
+}
+
+.for-you-div {
+  display: flex;
+  width: 85%;
+  align-items: center;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.for-you-navbar a {
+  text-decoration: none;
+  color: #6b6b6b;
+}
+
+.active {
+  position: relative;
+  margin-right: 25px;
+}
+
+.active:focus {
+  color: black !important;
+}
+
+.active:focus:after {
+  content: "";
+  border-bottom: 2px solid black;
+  width: 100%;
+  position: absolute;
+  top: 35px;
+  right: 0px;
+}
