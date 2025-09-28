@@ -1,79 +1,92 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar {
-    border: 1px solid black;
-    height: 90px;
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  border-bottom: solid 1px #f2f2f2;
+  height: 57px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: sans-serif;
 }
 
 .navbar .logo-search {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 340px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+  gap: 10px;
+  height: 40px;
 }
 
 .navbar svg {
-    height: 100px;
-    width: 126px;
+  width: 126px;
 }
 
 .navbar .search {
-    background-color: #F9F9F9;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    border-radius: 20px;
-    width: 188px;
-    height: 41px;
-
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  flex-grow: 1;
 }
 
 .navbar .search svg {
-    height: 30px;
-    width: 22px;
+  height: 30px;
+  width: 22px;
 }
 
 .search input {
-    background-color: transparent;
-    border-radius: 20px;
-    border: none;
+  background-color: transparent;
+  border-radius: 20px;
+  border: none;
+}
+
+.search input:focus {
+  outline: none;
 }
 
 .navbar .user-profile {
-    height: 100px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 400px;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
+  margin-right: 10px;
+  color: #6b6b6b;
 }
 
 .write-icon {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 5px;
 }
 
 .write-icon span {
-    padding-top: 7px;
+  padding-top: 7px;
+}
+
+.write-icon span:hover {
+  color: #242424;
 }
 .user-profile svg {
-    height: 30px;
-    width: 32px;
+  height: 30px;
+  width: 32px;
+}
+
+.user-profile svg:hover {
+  color: #242424;
 }
 
 #profile {
-    height: 40px;
-    width : 40px;
-    border-radius: 40px;
-    background-color: orange;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
