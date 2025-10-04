@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transition & Transform</title>
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    button {
+      height: 50px;
+      width: 80px;
+      transition: all 2s ease-in-out 0.5s;
+    }
+
+    button:hover {
+      background-color: red;
+      color: white;
+    }
+
+    img {
+      transform: scale(0.1, 0.1);
+    }
+
+    div {
+      border: solid red;
+      transform: translate(-30px, -40px) rotate(-20deg);
+      width: 140px;
+      height: 60px;
+    }
+  </style>
+  <body>
+    <button>Click Me!</button>
+    <div>Transformed element</div>
+
+    <!-- <img
+      src="https://a30e0792-016e-40b0-b76c-9d1760ffac20.mdnplay.dev/shared-assets/images/examples/firefox-logo.svg"
+    /> -->
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Page</title>
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      height: 50px;
+      width: 100vw;
+      background-color: red;
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      color: white;
+    }
+
+    .navbar a {
+      margin: 10px;
+    }
+
+    .container {
+      width: 70%;
+      margin: auto;
+      font-size: 40px;
+    }
+    .box1 {
+      width: 60%;
+      background-color: green;
+    }
+
+    .box2 {
+      width: 40%;
+      background-color: greenyellow;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .box1,
+      .box2 {
+        width: 100%;
+      }
+      .container {
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    .footer {
+      height: 300px;
+      width: 100%;
+      background-color: antiquewhite;
+    }
+  </style>
+  <body>
+    <header class="navbar">
+      <a>Home</a>
+      <a>About Us</a>
+
+      <a>Contact Us</a>
+      <a>Careers</a>
+    </header>
+
+    <div class="container">
+      <div class="box1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique dolor
+        ex eaque id ab ratione mollitia sequi accusantium doloribus. Totam quod
+        commodi voluptates fuga nam, quis iure sequi quas ratione!
+      </div>
+      <div class="box2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad assumenda
+        aspernatur alias saepe quas. Nemo commodi a autem fuga sit sunt
+        consectetur consequatur ratione nihil, minus voluptatem voluptatum alias
+        rerum.20
+      </div>
+    </div>
+
+    <footer class="footer"></footer>
+  </body>
+</html>
