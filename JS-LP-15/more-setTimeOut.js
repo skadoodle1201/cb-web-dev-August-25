@@ -1,9 +1,16 @@
 const maggieLena = (cb) => {
   console.log("Lekar aao maggie");
-  cb();
-  console.log("Cooked");
+  setTimeout(() => {
+    console.log("Maggie Le aye");
+    cb();
+  }, 2000);
 };
 
 const maggiecooking = () => {
-  console.log("Cooking Maggie");
+  console.log("Started Cooking");
+  setTimeout(() => {
+    console.log("Cooked");
+  }, 2000);
 };
+
+maggieLena(maggiecooking);
