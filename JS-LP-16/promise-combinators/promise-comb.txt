@@ -1,0 +1,20 @@
+//1. Username
+//2. Website Logo
+//3. Header
+//4. Terms and Conditions
+
+const p1 = new Promise((resolve, reject) => {});
+const p2 = new Promise((resolve, reject) => {});
+const p3 = new Promise((resolve, reject) => {});
+const p4 = new Promise((resolve, reject) => {});
+
+//Promise Combinators
+
+//1. Promise.all - Exceute All the promises but will stop if any off them fails
+const result = await Promise.all([p1, p2, p3, p4]);
+
+//2. Promise.allSettled - Exceute all the promises till all off them are settled (fullfilled).
+const resultOfSettled = await Promise.allSettled([p1, p2, p3, p4]);
+
+//3. Promise.race - Excute till one of the promise is fulliflled.
+const resultOfRace = await Promise.race([p1, p2, p3, p4]);
