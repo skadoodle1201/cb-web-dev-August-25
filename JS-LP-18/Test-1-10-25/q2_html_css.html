@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Dashboard</title>
+    <style>
+      /* --- Base Reset --- */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+        font-family: "Segoe UI", Roboto, Arial, sans-serif;
+        background: #e9eff2;
+        color: #0f172a;
+      }
+
+      /* --- Layout Container --- */
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      /* --- Header --- */
+      header {
+        background: #1e2a35;
+        color: #fff;
+        padding: 15px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      header .brand {
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+      header nav a {
+        color: #fff;
+        text-decoration: underline;
+        margin-left: 20px;
+        font-size: 0.95rem;
+      }
+
+      /* --- Main Wrapper --- */
+      .main-container {
+        flex: 1;
+        display: flex;
+        min-height: 0;
+      }
+
+      /* --- Sidebar --- */
+      aside {
+        background: #243340;
+        color: #fff;
+        width: 220px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .menu-title {
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 15px;
+      }
+
+      .menu a {
+        display: block;
+        background: #1e2a35;
+        color: #f1f5f9;
+        text-decoration: none;
+        padding: 12px 15px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        transition: background 0.2s;
+      }
+
+      .menu a:hover {
+        background: #344955;
+      }
+
+      /* --- Content --- */
+      main {
+        flex: 1;
+        padding: 25px;
+      }
+      main h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+      .card {
+        background: #fff;
+        border-radius: 10px;
+        padding: 18px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        border: 1px solid #dbe0e4;
+      }
+      .card h3 {
+        font-size: 1rem;
+        margin-bottom: 6px;
+        font-weight: 600;
+      }
+      .card p {
+        font-size: 0.95rem;
+        color: #475569;
+      }
+
+      /* --- Footer --- */
+      footer {
+        background: #1e2a35;
+        color: #f1f5f9;
+        text-align: center;
+        padding: 12px;
+        font-size: 0.9rem;
+      }
+
+      /* --- Responsive --- */
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 600px) {
+        .main-container {
+          flex-direction: column;
+        }
+        aside {
+          width: 100%;
+          flex-direction: row;
+          justify-content: space-around;
+        }
+        .menu a {
+          margin: 0;
+          border-radius: 5px;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="brand">My Dashboard</div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Profile</a>
+        <a href="#">Settings</a>
+      </nav>
+    </header>
+
+    <div class="main-container">
+      <aside>
+        <div class="menu-title">Menu</div>
+        <nav class="menu">
+          <a href="#">Dashboard</a>
+          <a href="#">Analytics</a>
+          <a href="#">Messages</a>
+          <a href="#">Settings</a>
+        </nav>
+      </aside>
+
+      <main>
+        <h1>Welcome Back 👋</h1>
+
+        <section class="grid">
+          <div class="card">
+            <h3>Card 1</h3>
+            <p>Some quick info here...</p>
+          </div>
+          <div class="card">
+            <h3>Card 2</h3>
+            <p>Another content block...</p>
+          </div>
+          <div class="card">
+            <h3>Card 3</h3>
+            <p>Data visualization placeholder</p>
+          </div>
+          <div class="card">
+            <h3>Card 4</h3>
+            <p>Stats summary...</p>
+          </div>
+          <div class="card">
+            <h3>Card 5</h3>
+            <p>Notifications</p>
+          </div>
+          <div class="card">
+            <h3>Card 6</h3>
+            <p>Recent Activity</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>© 2025 My Dashboard - All Rights Reserved</footer>
+  </body>
+</html>
