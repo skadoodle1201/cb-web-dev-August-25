@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="container">
+      <p id="text">Hello World!</p>
+    </div>
+
+    <button id="change">Change innerHTML</button>
+
+    <script>
+      const container = document.getElementById("container");
+      const text = document.getElementById("text"); // reference to <p> element
+
+      document.getElementById("change").addEventListener("click", () => {
+        console.log("Before:", text.textContent); // ✅ works
+
+        // Replace the innerHTML of container
+        container.innerHTML = '<p id="text">Goodbye World!</p>';
+
+        console.log("After:", text.textContent); // ❌ ERROR — text is now a stale reference
+      });
+    </script>
+  </body>
+</html>
