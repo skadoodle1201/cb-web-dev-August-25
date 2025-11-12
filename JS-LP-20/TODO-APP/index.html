@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO APP</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">TODO APP</span>
+      </div>
+    </nav>
+    <div>
+      <form class="mt-2" id="addTask">
+        <input type="text" placeholder="Add Task" name="Task" />
+        <button>Add</button>
+      </form>
+    </div>
+    <div>
+      LIST
+      <ol id="TaskList">
+        <li>
+          Task 1 <button class="UP">UP</button>
+          <button class="DOWN">DOWN</button>
+          <button>REMOVE</button>
+        </li>
+        <li>
+          Task 2 <button class="UP">UP</button>
+          <button class="DOWN">DOWN</button>
+          <button>REMOVE</button>
+        </li>
+        <li>
+          Task 3 <button class="UP">UP</button>
+          <button class="DOWN">DOWN</button>
+          <button>REMOVE</button>
+        </li>
+        <li>
+          Task 4 <button class="UP">UP</button>
+          <button class="DOWN">DOWN</button>
+          <button>REMOVE</button>
+        </li>
+      </ol>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const clickHandler = (e) => {
+        if (e.target.classList.contains("UP")) {
+          const currentTask = e.target.closest("li");
+          const previous = e.target.closest("li").previousElementSibling;
+          if (previous == null || !previous) return;
+          currentTask.parentNode.insertBefore(currentTask, previous);
+        }
+
+        if (e.target.classList.contains("DOWN")) {
+          const currentTask = e.target.closest("li");
+          const next = e.target.closest("li").nextElementSibling;
+          if (next == null || !next) return;
+          currentTask.parentNode.insertBefore(
+            currentTask,
+            next.nextElementSibling
+          );
+        }
+      };
+
+      const taskList = document.getElementById("TaskList");
+      taskList.addEventListener("click", clickHandler);
+
+      const form = document.getElementById("addTask");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const newTask = e.target.elements.Task.value;
+
+        if (!newTask) {
+          return;
+        }
+        const taskList = document.getElementById("TaskList");
+
+        const newTaskItem = document.createElement("li");
+        newTaskItem.innerHTML = `${newTask} <button class="UP">UP</button> <button class="DOWN">DOWN</button> <button class="REMOVE">REMOVE</button>`;
+        taskList.append(newTaskItem);
+      });
+    </script>
+  </body>
+</html>
