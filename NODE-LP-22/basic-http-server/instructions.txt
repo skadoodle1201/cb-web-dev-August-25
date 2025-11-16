@@ -1,0 +1,19 @@
+Pre Requistes 
+1. Should Have Node and NPM
+
+
+Steps To create a Server with EXPRESS
+1. npm init or npm init -y
+    this is initailizes a node application with basic properties.
+    And Create package.json which provides basic details of the application.
+
+2. npm install <package_name>
+    installs a given package and updates package.json with package name and version
+    In our case install express first.
+
+3. Create a file called index.json
+    This will have our application intial code.
+
+4.  -> Import express 
+    -> create application instance using express() 
+    -> run application using listen function on application instance
