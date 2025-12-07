@@ -52,7 +52,34 @@ const validateUpdateTaskMiddleware = (req, res, next) => {
   next();
 };
 
+const validateMoveTaskMiddleware = (req, res, next) => {
+  const { id } = req.params;
+  const { action } = req.query;
+  const validActions = ["move-up", "move-down"];
+
+  const isValid = id && validateActions(action, validActions);
+
+  if (!isValid) {
+    return res.status(400).json({
+      message: "Invalid Request",
+    });
+  }
+  next();
+};
+
+const validateId = (req, res, next) => {
+  const { id } = req.params;
+  if (!id) {
+    return res.status(400).json({
+      message: "Invalid Request",
+    });
+  }
+  next();
+};
+
 module.exports = {
   validateTaskMiddleware,
   validateUpdateTaskMiddleware,
+  validateMoveTaskMiddleware,
+  validateId,
 };
