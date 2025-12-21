@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO APP</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        background: radial-gradient(circle at 20% 20%, #f9f5ff, #e3ebff 45%, #f8fbff);
+        color: #0f172a;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 16px;
+      }
+
+      .app-shell {
+        width: min(960px, 100%);
+        display: grid;
+        gap: 20px;
+      }
+
+      h1 {
+        margin: 0;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: #0f172a;
+        text-align: center;
+      }
+
+      .muted {
+        text-align: center;
+        color: #475569;
+        margin-top: -6px;
+      }
+
+      .card {
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 20px;
+        box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+        border: 1px solid #e2e8f0;
+      }
+
+      .add-task h2,
+      .task-box h2 {
+        margin: 0 0 12px 0;
+        font-size: 18px;
+        color: #0f172a;
+      }
+
+      form {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      input[type="text"] {
+        flex: 1 1 260px;
+        padding: 12px 14px;
+        border: 1px solid #cbd5e1;
+        border-radius: 12px;
+        font-size: 15px;
+        background: #f8fafc;
+        transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      }
+
+      input[type="text"]:focus {
+        outline: none;
+        border-color: #6366f1;
+        background: #ffffff;
+        box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+      }
+
+      button {
+        border: none;
+        border-radius: 12px;
+        padding: 12px 16px;
+        cursor: pointer;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s;
+      }
+
+      button[type="submit"] {
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: white;
+        box-shadow: 0 10px 30px rgba(99, 102, 241, 0.28);
+      }
+
+      button[type="submit"]:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 14px 34px rgba(99, 102, 241, 0.32);
+      }
+
+      .task-box {
+        background: linear-gradient(180deg, #f8fafc 0%, #ffffff 48%);
+      }
+
+      .task-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+      }
+
+      .pill {
+        padding: 6px 10px;
+        background: #eef2ff;
+        color: #4338ca;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      #task-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .list-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        background: #ffffff;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
+        font-size: 15px;
+      }
+
+      .task-content {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 1;
+      }
+
+      .task-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #6366f1;
+        flex-shrink: 0;
+      }
+
+      .task-done .task-dot {
+        background: #10b981;
+      }
+
+      .task-text {
+        color: #0f172a;
+      }
+
+      .task-done .task-text {
+        text-decoration: line-through;
+        color: #22c55e;
+        opacity: 0.8;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .actions button {
+        background: #f8fafc;
+        color: #0f172a;
+        padding: 10px 12px;
+        box-shadow: none;
+        border: 1px solid #e2e8f0;
+      }
+
+      .actions button:hover {
+        background: #e2e8f0;
+        transform: translateY(-1px);
+      }
+
+      @media (max-width: 640px) {
+        body {
+          padding: 24px 12px;
+        }
+
+        .actions {
+          width: 100%;
+          justify-content: flex-end;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="app-shell">
+      <div>
+        <h1>Todo Dashboard</h1>
+        <p class="muted">Capture what matters and track your progress with ease.</p>
+      </div>
+
+      <section class="card add-task">
+        <h2>Add a task</h2>
+        <form action="/todo" method="POST" id="add-task-form">
+          <input
+            type="text"
+            placeholder="Add a new task..."
+            name="task_input"
+            id="task-input"
+          />
+          <button type="submit">Save Task</button>
+        </form>
+      </section>
+
+      <section class="card task-box">
+        <div class="task-header">
+          <h2>Task list</h2>
+          <span class="pill" id="task-status-pill">In progress</span>
+        </div>
+        <ul id="task-list"></ul>
+      </section>
+    </main>
+  </body>
+  <script src="./script.js"></script>
+</html>
