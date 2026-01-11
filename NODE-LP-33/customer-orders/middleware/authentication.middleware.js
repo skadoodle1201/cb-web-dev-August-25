@@ -14,6 +14,16 @@ const authenticateUser = (req, res, next) => {
   }
 };
 
+const isAdmin = (req, res, next) => {
+  const { admin } = req.user;
+  if (admin) {
+    return next();
+  }
+  return res.status(403).json({
+    message: "Unauthorized",
+  });
+};
+
 module.exports = {
   authenticateUser,
 };
