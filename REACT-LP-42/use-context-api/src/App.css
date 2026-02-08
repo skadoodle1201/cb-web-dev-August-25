@@ -1,0 +1,39 @@
+.btn-css {
+  padding: 10em;
+  background: black;
+  color: white;
+}
+
+.btn-css-dark {
+  padding: 10em;
+  background: wheat;
+  color: black;
+}
+
+.task-list {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+/* Light theme */
+.task-list-light {
+  background-color: #ffffff;
+  color: #222;
+}
+
+/* Dark theme */
+.task-list-dark {
+  background-color: #1e1e1e;
+  color: #eaeaea;
+}
+
+.task-list ol {
+  margin-top: 10px;
+}
+
+.task-list li {
+  margin: 6px 0;
+}
