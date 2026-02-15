@@ -25,10 +25,10 @@ function App() {
 
 const CustomButton = ({ text, options: { fn, params = [] } }) => {
   const dispatch = useDispatch();
-
   return (
     <button
       onClick={() => {
+        // dispatch(increment())
         dispatch(fn(...params));
       }}
     >
