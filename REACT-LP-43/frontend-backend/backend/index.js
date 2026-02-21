@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
-app.use(cors());
+app.use(cors()); //all the domain all the orgins
 
 app.get("/", (req, res) => {
   return res.status(200).json({
