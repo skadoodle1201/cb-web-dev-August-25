@@ -9,19 +9,18 @@ const Whiteboard = ({ setCanvas }) => {
   const strokeWidth = useSelector((state) => state.strokes.value);
   const strokeColor = useSelector((state) => state.colors.value);
 
-  const enableFreehand = () => {
-    if (!fabricRef.current) return;
-    fabricRef.current.isDrawingMode = true;
-  };
-
-  const disableFreeHand = () => {
-    if (!fabricRef.current) return;
-    fabricRef.current.isDrawingMode = false;
-  };
-
   useEffect(() => {
     const options = { width: 1000, height: 600 };
     const fabricCanvas = new fabric.Canvas(canvasEl.current, options);
+
+    const prevCanvasJSON = localStorage.getItem("canvasSave");
+
+    if (prevCanvasJSON) {
+      fabricCanvas
+        .loadFromJSON(prevCanvasJSON)
+        .then((fabricCanvas) => fabricCanvas.renderAll());
+    }
+
     fabricCanvas.freeDrawingBrush = new fabric.PencilBrush(fabricCanvas);
 
     fabricCanvas.freeDrawingBrush.color = "black";
@@ -45,25 +44,6 @@ const Whiteboard = ({ setCanvas }) => {
 
   return (
     <div className="whiteboard-wrap">
-      <div className="whiteboard-tools">
-        <button
-          className="toolbar-btn"
-          onClick={() => {
-            enableFreehand();
-          }}
-        >
-          FreeHand
-        </button>
-        <button
-          className="toolbar-btn"
-          onClick={() => {
-            disableFreeHand();
-          }}
-        >
-          Select
-        </button>
-      </div>
-
       {/* <button
         onClick={() => {
           eraserBrush();
@@ -72,7 +52,7 @@ const Whiteboard = ({ setCanvas }) => {
         Erase
       </button> */}
       <div className="canvas-shell">
-        <canvas ref={canvasEl} />
+        <canvas key="my-canvas" ref={canvasEl} />
       </div>
     </div>
   );

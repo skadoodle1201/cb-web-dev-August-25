@@ -1,9 +1,19 @@
 import React from "react";
 import * as fabric from "fabric";
-import { addCircle, addRect, removeSelected } from "../utility/tools";
+import {
+  addCircle,
+  addRect,
+  addText,
+  disableFreeHand,
+  enableFreehand,
+  removeSelected,
+  resetCanavs,
+  saveToLocal,
+} from "../utility/tools";
 import { useDispatch, useSelector } from "react-redux";
 import { setStrokeWidth } from "../redux/strokes.slice";
 import { setStrokeColor } from "../redux/color.slice";
+import Button from "./Button";
 
 const Toolbar = ({ canvas }) => {
   const strokeWidth = useSelector((state) => state.strokes.value);
@@ -13,50 +23,35 @@ const Toolbar = ({ canvas }) => {
   return (
     <div className="toolbar">
       <div className="toolbar-controls">
-        <button
-          className="toolbar-btn"
-          onClick={() => {
-            if (!canvas) return;
-            canvas.clear();
-          }}
-        >
-          RESET
-        </button>
-        <button
-          className="toolbar-btn"
-          onClick={() => {
-            if (!canvas) return;
-            const rect = addRect(fabric, {
+        <Button
+          buttonStyles={"toolbar-btn"}
+          onClickFn={() =>
+            addRect(fabric, canvas, {
+              strokeWidth,
+              strokeColor: color,
+              fill: color,
+            })
+          }
+          buttonCTA={"🔳"}
+        />
+        <Button
+          buttonStyles={"toolbar-btn"}
+          onClickFn={() => {
+            addCircle(fabric, canvas, {
               strokeWidth,
               strokeColor: color,
             });
-            canvas.add(rect);
           }}
-        >
-          Rec
-        </button>
-        <button
-          className="toolbar-btn"
-          onClick={() => {
-            if (!canvas) return;
-            const circle = addCircle(fabric, {
-              strokeWidth,
-              strokeColor: color,
-            });
-            canvas.add(circle);
-          }}
-        >
-          Circle
-        </button>
-        <button
-          className="toolbar-btn toolbar-btn-danger"
-          onClick={() => {
-            if (!canvas) return;
+          buttonCTA={"⭕"}
+        />
+        <Button
+          buttonStyles={"toolbar-btn"}
+          onClickFn={() => {
             removeSelected(canvas);
           }}
-        >
-          X
-        </button>
+          buttonCTA={"⌫"}
+        />
+
         <span className="toolbar-group">
           <label htmlFor="stroke-width">Stroke</label>
           <input
@@ -84,24 +79,44 @@ const Toolbar = ({ canvas }) => {
             value={color}
           ></input>
         </span>
-        <button
-          className="toolbar-btn toolbar-btn-text"
-          onClick={() => {
-            if (!canvas) return;
-            const myText = new fabric.Textbox("Add Text", {
-              left: 100,
-              top: 100,
-              fill: color,
-            });
 
-            myText.enterEditing();
-            myText.selectAll();
-            canvas.add(myText);
-            canvas.setActiveObject(myText);
+        <Button
+          buttonStyles={"toolbar-btn toolbar-btn-text"}
+          onClickFn={() => {
+            addText(fabric, canvas, { fill: color });
           }}
-        >
-          Add Text
-        </button>
+          buttonCTA={"💬"}
+        />
+
+        <Button
+          buttonStyles={"toolbar-btn"}
+          onClickFn={() => {
+            enableFreehand(canvas);
+          }}
+          buttonCTA={"✍️"}
+        />
+
+        <Button
+          buttonStyles={"toolbar-btn"}
+          onClickFn={() => {
+            disableFreeHand(canvas);
+          }}
+          buttonCTA={"⊹"}
+        />
+
+        <Button
+          buttonStyles={"toolbar-btn"}
+          onClickFn={() => {
+            saveToLocal(canvas);
+          }}
+          buttonCTA={"💾"}
+        />
+
+        <Button
+          buttonStyles={"toolbar-btn"}
+          onClickFn={() => resetCanavs(canvas)}
+          buttonCTA={"RESET"}
+        />
       </div>
     </div>
   );
