@@ -3,31 +3,22 @@ const express = require("express");
 const app = express();
 const { mongoConnect } = require("./dbConnection.js");
 const Users = require("./models/users.js");
+const userRoutes = require("./routes/user.routes.js");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
+
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  }),
+);
+
+app.use(cookieParser());
 
 app.use(express.json({ extended: true, bodyParse: true }));
 
-app.post("/user", async (req, res) => {
-  try {
-    const body = req.body;
-    const { username, email, password } = body;
-    const createUser = new Users({
-      username,
-      email,
-      password,
-    });
-
-    await createUser.save();
-
-    res.status(200).json({
-      message: "Success",
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({
-      message: "Something Went Wrong",
-    });
-  }
-});
+app.use("/user", userRoutes);
 
 app.get("/health", (req, res) => {
   res.send("OK");

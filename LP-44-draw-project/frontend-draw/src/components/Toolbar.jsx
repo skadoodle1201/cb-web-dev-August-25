@@ -45,7 +45,7 @@ const Toolbar = ({ canvas }) => {
           buttonCTA={"⭕"}
         />
         <Button
-          buttonStyles={"toolbar-btn"}
+          buttonStyles={"toolbar-btn toolbar-btn-danger"}
           onClickFn={() => {
             removeSelected(canvas);
           }}
@@ -113,7 +113,7 @@ const Toolbar = ({ canvas }) => {
         />
 
         <Button
-          buttonStyles={"toolbar-btn"}
+          buttonStyles={"toolbar-btn toolbar-btn-danger"}
           onClickFn={() => resetCanavs(canvas)}
           buttonCTA={"RESET"}
         />

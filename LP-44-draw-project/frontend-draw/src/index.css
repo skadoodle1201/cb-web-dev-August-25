@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #fafafa;
+  font-family: "Avenir Next", "Nunito Sans", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #f7fcfa 0%, #ecf2f1 55%, #e8eeee 100%);
   color: #222;
 }
