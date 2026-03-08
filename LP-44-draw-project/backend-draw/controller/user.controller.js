@@ -1,5 +1,9 @@
 const Users = require("../models/users");
-const { generateHashedPass, comparePassword } = require("../utility/helper");
+const {
+  generateHashedPass,
+  comparePassword,
+  verifyToken,
+} = require("../utility/helper");
 
 const jwt = require("jsonwebtoken");
 const jwtSecret = process.env.JWT_SECRET;
@@ -22,6 +26,7 @@ const createUser = async (req, res) => {
     const token = jwt.sign(
       {
         email: userDetails.email,
+        id: userDetails._id,
       },
       jwtSecret,
       {
@@ -73,6 +78,7 @@ const loginUser = async (req, res) => {
   const token = jwt.sign(
     {
       email: userDetails.email,
+      id: userDetails._id,
     },
     jwtSecret,
     {
@@ -93,15 +99,15 @@ const loginUser = async (req, res) => {
 
 const validateToken = async (req, res) => {
   const token = req.cookies.auth;
-  if (!token) {
-    res.status(403).json({
+  const validUser = await verifyToken(token);
+
+  if (!validUser) {
+    return res.status(403).json({
       message: "Unauthorized",
     });
   }
 
-  const decoded = jwt.verify(token, jwtSecret);
-  const { email } = decoded;
-
+  const { email } = validUser;
   const user = await Users.findOne({
     email,
   }).lean();
