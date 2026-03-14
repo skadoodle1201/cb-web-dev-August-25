@@ -9,9 +9,10 @@ const canvasRoutes = require("./routes/canvas.routes.js");
 const { createServer } = require("node:http");
 const { Server } = require("socket.io");
 
+const FE_URL = process.env.ALLOWED_HOST;
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: FE_URL,
     credentials: true,
   }),
 );
@@ -28,7 +29,7 @@ app.get("/health", (req, res) => {
 });
 const server = createServer(app);
 const io = new Server(server, {
-  cors: { origin: "http://localhost:5173", credentials: true },
+  cors: { origin: FE_URL, credentials: true },
 });
 
 const roomMap = {};
@@ -67,7 +68,7 @@ const startServer = async () => {
   await mongoConnect();
 
   server.listen(4000, () => {
-    console.log("Application started on PORT 4000, http://localhost:4000");
+    console.log("Application started on PORT 4000");
   });
 };
 

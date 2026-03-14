@@ -1,6 +1,6 @@
 import { io } from "socket.io-client";
 
-const URL = "http://localhost:4000";
+const URL = process.env.DOMAIN_URL;
 
 export const socket = io(URL, {
   autoConnect: false, // prevents connection on page load

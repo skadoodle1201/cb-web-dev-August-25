@@ -1,9 +1,10 @@
 import axios from "axios";
 
+const BASE_URL = process.env.DOMAIN_URL;
 export const login = async (email, password) => {
   try {
     const response = await axios.post(
-      "http://localhost:4000/user/login",
+      `${BASE_URL}/user/login`,
       {
         email,
         password,
@@ -22,7 +23,7 @@ export const login = async (email, password) => {
 export const signup = async (name, email, password) => {
   try {
     const response = await axios.post(
-      "http://localhost:4000/user",
+      `${BASE_URL}/user`,
       {
         username: name,
         email,
@@ -41,7 +42,7 @@ export const signup = async (name, email, password) => {
 
 export const validate = async () => {
   try {
-    const response = await axios.get("http://localhost:4000/user/validate", {
+    const response = await axios.get(`${BASE_URL}/user/validate`, {
       withCredentials: true,
     });
     const { userDetails } = response.data.data;
@@ -55,11 +56,7 @@ export const validate = async () => {
 
 export const logout = async () => {
   try {
-    await axios.post(
-      "http://localhost:4000/user/logout",
-      {},
-      { withCredentials: true },
-    );
+    await axios.post(`${BASE_URL}/user/logout`, {}, { withCredentials: true });
 
     return true;
   } catch (error) {
